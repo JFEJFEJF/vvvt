@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع تحفيزي وتنظيم الوقت</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="clock">
+                <span id="clock-time"></span>
+                <span id="current-day"></span>
+            </div>
+            <button id="toggle-theme">تبديل المظهر</button>
+        </div>
+        <div id="motivational-section" class="input-section">
+            <h1>مرحبًا بك!</h1>
+            <input type="text" id="student-name" class="input-field" placeholder="أدخل اسمك">
+            <button id="continue-btn" class="red-button">استمرار</button>
+        </div>
+        <div id="schedule-setup-section" class="hidden">
+            <h2>إعداد الجدول الدراسي</h2>
+            <label for="days-input">عدد الأيام:</label>
+            <input type="number" id="days-input" min="1" max="7" value="5">
+            <label for="hours-input">عدد الساعات:</label>
+            <input type="number" id="hours-input" min="1" max="24" value="8">
+            <button id="create-schedule-btn" class="red-button">إنشاء الجدول</button>
+        </div>
+        <div id="schedule-section" class="hidden">
+            <h2>جدولك الدراسي</h2>
+            <div id="color-options">
+                <div id="text-color-options">
+                    <span class="color-circle" style="background-color: black;" data-color="black"></span>
+                    <span class="color-circle" style="background-color: white;" data-color="white"></span>
+                    <span class="color-circle" style="background-color: red;" data-color="red"></span>
+                    <span class="color-circle" style="background-color: blue;" data-color="blue"></span>
+                </div>
+                <div id="background-color-options">
+                    <span class="color-square" style="background-color: black;" data-color="black"></span>
+                    <span class="color-square" style="background-color: white;" data-color="white"></span>
+                    <span class="color-square" style="background-color: red;" data-color="red"></span>
+                    <span class="color-square" style="background-color: blue;" data-color="blue"></span>
+                </div>
+                <div id="text-size-options">
+                    <button id="increase-text-size" class="red-button">تكبير النص</button>
+                    <button id="decrease-text-size" class="red-button">تصغير النص</button>
+                </div>
+                <div id="text-alignment-options">
+                    <button data-alignment="left" class="red-button">محاذاة يسار</button>
+                    <button data-alignment="center" class="red-button">محاذاة وسط</button>
+                    <button data-alignment="right" class="red-button">محاذاة يمين</button>
+                </div>
+            </div>
+            <table id="schedule-table">
+                <!-- جدول فارغ سيتم تعبئته بواسطة الجافاسكربت -->
+            </table>
+            <div id="subject-section">
+                <label for="subject-name">اسم المادة:</label>
+                <input type="text" id="subject-name" class="input-field" placeholder="أدخل اسم المادة">
+                <button id="add-subject-btn" class="red-button">إضافة مادة</button>
+            </div>
+            <button id="add-row-btn" class="red-button">إضافة صف</button>
+            <button id="add-column-btn" class="red-button">إضافة عمود</button>
+            <button id="save-btn" class="red-button">حفظ الجدول كصورة</button>
+        </div>
+        <div id="notes-section" class="hidden">
+            <h2>ملاحظات</h2>
+            <textarea id="notes-input" class="input-field" placeholder="أدخل ملاحظاتك هنا..."></textarea>
+            <button id="save-notes-btn" class="red-button">حفظ الملاحظات</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
